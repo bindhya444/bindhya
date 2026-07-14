@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bindhya J M — Software Analyst / Cybersecurity Analyst</title>
+<meta name="description" content="Bindhya J M — Senior Software Analyst with 7+ years delivering enterprise systems, now completing an MSc in Cybersecurity and pivoting into security operations.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink: #0F141B;
+    --panel: #161D26;
+    --panel-2: #1C2530;
+    --line: #2A3542;
+    --text: #E7EAEE;
+    --muted: #8B96A3;
+    --muted-2: #5F6B78;
+    --amber: #E8A33D;
+    --amber-dim: #8A6425;
+    --teal: #4FB8AE;
+    --teal-dim: #2E5F5A;
+    --red: #D9694F;
+    --mono: 'JetBrains Mono', ui-monospace, monospace;
+    --sans: 'IBM Plex Sans', -apple-system, sans-serif;
+  }
+
+  *{ box-sizing: border-box; margin:0; padding:0; }
+
+  html{ scroll-behavior: smooth; }
+
+  body{
+    background: var(--ink);
+    color: var(--text);
+    font-family: var(--sans);
+    line-height: 1.6;
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(255,255,255,0.035) 1px, transparent 0);
+    background-size: 28px 28px;
+  }
+
+  a{ color: inherit; }
+
+  ::selection{ background: var(--amber-dim); color: var(--text); }
+
+  .wrap{ max-width: 980px; margin: 0 auto; padding: 0 28px; }
+
+  /* ---------- NAV ---------- */
+  header.nav{
+    position: sticky; top:0; z-index: 50;
+    background: rgba(15,20,27,0.86);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner{
+    max-width: 980px; margin: 0 auto; padding: 16px 28px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .brand{
+    font-family: var(--mono); font-weight:600; font-size: 14px;
+    letter-spacing: 0.02em;
+    display:flex; align-items:center; gap:10px;
+  }
+  .dot{
+    width:8px; height:8px; border-radius:50%;
+    background: var(--teal);
+    box-shadow: 0 0 0 3px rgba(79,184,174,0.15);
+    animation: pulse 2.6s ease-in-out infinite;
+    flex-shrink:0;
+  }
+  @keyframes pulse{
+    0%,100%{ opacity:1; } 50%{ opacity:0.45; }
+  }
+  nav.links{ display:flex; gap: 26px; font-family: var(--mono); font-size: 13px; }
+  nav.links a{
+    color: var(--muted); text-decoration:none; letter-spacing:0.02em;
+    padding-bottom: 2px; border-bottom: 1px solid transparent;
+    transition: color .15s ease, border-color .15s ease;
+  }
+  nav.links a:hover{ color: var(--amber); border-color: var(--amber-dim); }
+  .menu-btn{ display:none; background:none; border:1px solid var(--line); color:var(--text); font-family:var(--mono); font-size:12px; padding:8px 12px; border-radius:4px; cursor:pointer; }
+
+  @media (max-width: 700px){
+    nav.links{
+      position:absolute; top:100%; left:0; right:0;
+      background: var(--panel); border-bottom:1px solid var(--line);
+      flex-direction:column; gap:0; max-height:0; overflow:hidden;
+      transition: max-height .25s ease;
+    }
+    nav.links.open{ max-height: 320px; }
+    nav.links a{ padding:14px 28px; border-bottom:1px solid var(--line); }
+    .menu-btn{ display:block; }
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{ padding: 72px 0 56px; }
+  .eyebrow{
+    font-family: var(--mono); font-size: 12px; color: var(--muted-2);
+    letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 18px;
+  }
+  .eyebrow::before{ content: "// "; color: var(--amber-dim); }
+
+  h1.name{
+    font-family: var(--mono); font-weight:700;
+    font-size: clamp(32px, 6vw, 52px);
+    letter-spacing: -0.01em;
+    color: var(--text);
+  }
+  .role-shift{
+    margin-top:10px; font-size: clamp(16px, 2.4vw, 20px);
+    color: var(--muted); font-weight:500;
+    display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+  }
+  .role-shift .from{ color: var(--muted); }
+  .role-shift .arrow{ color: var(--amber); font-family: var(--mono); }
+  .role-shift .to{ color: var(--teal); font-weight:600; }
+
+  .terminal{
+    margin-top: 36px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px -20px rgba(0,0,0,0.5);
+  }
+  .terminal-bar{
+    display:flex; align-items:center; gap:8px;
+    padding: 10px 14px; border-bottom:1px solid var(--line);
+    background: var(--panel-2);
+  }
+  .terminal-bar span{ width:9px; height:9px; border-radius:50%; background: var(--line); }
+  .terminal-bar .label{
+    margin-left: 8px; font-family: var(--mono); font-size:11px; color: var(--muted-2);
+  }
+  .terminal-body{
+    padding: 20px 22px 26px;
+    font-family: var(--mono); font-size: 13.5px; color: var(--text);
+  }
+  .terminal-body .line{ margin-bottom: 14px; opacity:0; animation: reveal .4s ease forwards; }
+  .terminal-body .prompt{ color: var(--teal); }
+  .terminal-body .out{ color: var(--muted); display:block; margin-top:4px; padding-left: 18px; }
+  .terminal-body .out b{ color: var(--text); font-weight:600; }
+  .cursor{
+    display:inline-block; width:8px; height:15px; background: var(--amber);
+    margin-left:4px; vertical-align: -2px;
+    animation: blink 1s step-end infinite;
+  }
+  @keyframes blink{ 50%{ opacity:0; } }
+  @keyframes reveal{ to{ opacity:1; } }
+
+  .cta-row{ margin-top: 30px; display:flex; gap:14px; flex-wrap:wrap; }
+  .btn{
+    font-family: var(--mono); font-size: 13px; text-decoration:none;
+    padding: 11px 18px; border-radius: 5px; border:1px solid var(--line);
+    transition: border-color .15s ease, transform .15s ease, background .15s ease;
+    display:inline-flex; align-items:center; gap:8px;
+  }
+  .btn.primary{ background: var(--amber); color: #201304; border-color: var(--amber); font-weight:600; }
+  .btn.primary:hover{ transform: translateY(-1px); }
+  .btn.ghost{ color: var(--text); }
+  .btn.ghost:hover{ border-color: var(--teal); color: var(--teal); }
+
+  /* ---------- SECTION SHELL ---------- */
+  section{ padding: 64px 0; border-top: 1px solid var(--line); }
+  .sec-head{ margin-bottom: 34px; }
+  .sec-tag{
+    font-family: var(--mono); font-size:12px; color: var(--amber);
+    letter-spacing: 0.1em; text-transform:uppercase; margin-bottom:8px;
+  }
+  .sec-title{ font-family: var(--mono); font-size: clamp(22px,3vw,28px); font-weight:700; }
+  .sec-sub{ color: var(--muted); margin-top:10px; max-width: 620px; font-size:15px; }
+
+  .reveal-up{ opacity:0; transform: translateY(16px); transition: opacity .5s ease, transform .5s ease; }
+  .reveal-up.in{ opacity:1; transform: translateY(0); }
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{ display:grid; grid-template-columns: 1fr; gap: 24px; }
+  .about p{ color: var(--muted); font-size: 15.5px; max-width: 680px; }
+  .about p + p{ margin-top: 14px; }
+  .about strong{ color: var(--text); }
+  .stat-row{ display:flex; gap: 34px; margin-top: 28px; flex-wrap:wrap; }
+  .stat b{
+    display:block; font-family: var(--mono); font-size: 26px; color: var(--teal);
+  }
+  .stat span{ font-size: 12px; color: var(--muted-2); font-family: var(--mono); letter-spacing:0.04em; }
+
+  /* ---------- SKILLS: BUILD / DEFEND ---------- */
+  .duality{ display:grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 700px){ .duality{ grid-template-columns: 1fr; } }
+  .panel{
+    background: var(--panel); border:1px solid var(--line); border-radius: 8px;
+    padding: 26px 24px;
+    position: relative; overflow:hidden;
+  }
+  .panel::before{
+    content:""; position:absolute; top:0; left:0; right:0; height:3px;
+  }
+  .panel.build::before{ background: var(--muted-2); }
+  .panel.defend::before{ background: var(--teal); }
+  .panel-head{ display:flex; align-items:baseline; justify-content:space-between; margin-bottom:16px; }
+  .panel-title{ font-family: var(--mono); font-weight:700; font-size:15px; letter-spacing:0.06em; }
+  .panel.build .panel-title{ color: var(--muted); }
+  .panel.defend .panel-title{ color: var(--teal); }
+  .panel-note{ font-family: var(--mono); font-size:11px; color: var(--muted-2); }
+  .skill-list{ list-style:none; }
+  .skill-list li{
+    font-size: 14px; color: var(--text); padding: 8px 0;
+    border-bottom: 1px dashed var(--line);
+    display:flex; gap:10px;
+  }
+  .skill-list li:last-child{ border-bottom:none; }
+  .skill-list li::before{ content:"·"; color: var(--amber); font-weight:700; }
+  .skill-list b{ color: var(--muted); font-weight:500; font-size:12px; }
+
+  /* ---------- EXPERIENCE LOG ---------- */
+  .log{ border-left: 1px solid var(--line); margin-left: 6px; }
+  .entry{ position:relative; padding: 0 0 40px 30px; }
+  .entry:last-child{ padding-bottom:0; }
+  .entry::before{
+    content:""; position:absolute; left:-5px; top:4px;
+    width:9px; height:9px; border-radius:50%;
+    background: var(--ink); border:2px solid var(--amber);
+  }
+  .entry.sub::before{ border-color: var(--teal); width:7px; height:7px; left:-4px; }
+  .entry-ts{
+    font-family: var(--mono); font-size: 12px; color: var(--amber);
+    letter-spacing: 0.03em; margin-bottom: 6px;
+  }
+  .entry.sub .entry-ts{ color: var(--teal); }
+  .entry-role{ font-weight:700; font-size: 16px; margin-bottom:4px; }
+  .entry-org{ color: var(--muted); font-size: 13.5px; margin-bottom:10px; }
+  .entry ul{ list-style:none; }
+  .entry ul li{
+    font-size: 14px; color: var(--muted); padding: 4px 0 4px 16px; position:relative;
+  }
+  .entry ul li::before{ content:"—"; position:absolute; left:0; color: var(--muted-2); }
+  .entry ul li b{ color: var(--text); font-weight:500; }
+  .subgroup{ margin-top: 18px; padding-left: 4px; border-left: 1px solid var(--line); }
+  .subgroup .entry{ padding-left: 26px; }
+
+  /* ---------- EDUCATION ---------- */
+  .edu-list{ display:grid; gap:16px; }
+  .edu-item{
+    display:flex; justify-content:space-between; gap: 20px;
+    padding: 18px 22px; background: var(--panel); border:1px solid var(--line); border-radius:7px;
+    flex-wrap:wrap;
+  }
+  .edu-item .deg{ font-weight:600; font-size:15px; }
+  .edu-item .org{ color: var(--muted); font-size:13.5px; margin-top:3px; }
+  .edu-item .yr{ font-family: var(--mono); font-size:12px; color: var(--amber); white-space:nowrap; }
+  .badge{
+    display:inline-block; margin-left:8px; font-family: var(--mono); font-size:10px;
+    color: var(--teal); border:1px solid var(--teal-dim); padding:2px 6px; border-radius:3px;
+    letter-spacing:0.05em; vertical-align:middle;
+  }
+
+  /* ---------- CONTACT / FOOTER ---------- */
+  footer{ border-top: 1px solid var(--line); padding: 56px 0 40px; }
+  .contact-grid{ display:flex; flex-wrap:wrap; gap: 40px; justify-content: space-between; align-items:flex-end; }
+  .contact-links{ display:flex; flex-direction:column; gap:10px; }
+  .contact-links a{
+    font-family: var(--mono); font-size: 14px; text-decoration:none; color: var(--text);
+    display:flex; align-items:center; gap:10px;
+  }
+  .contact-links a:hover{ color: var(--amber); }
+  .contact-links .k{ color: var(--muted-2); font-size:11px; width:64px; display:inline-block; }
+  .foot-note{ font-family: var(--mono); font-size: 11px; color: var(--muted-2); margin-top: 40px; }
+
+  @media (max-width:700px){
+    .contact-grid{ flex-direction:column; align-items:flex-start; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+    html{ scroll-behavior:auto; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="brand"><span class="dot"></span> BINDHYA_JM</div>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">MENU</button>
+    <nav class="links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <div class="eyebrow">session log</div>
+    <h1 class="name">Bindhya J M</h1>
+    <div class="role-shift">
+      <span class="from">Senior Software Analyst</span>
+      <span class="arrow">→</span>
+      <span class="to">Cybersecurity Analyst</span>
+    </div>
+
+    <div class="terminal">
+      <div class="terminal-bar">
+        <span></span><span></span><span></span>
+        <span class="label">~/bindhya — zsh</span>
+      </div>
+      <div class="terminal-body" id="termBody">
+        <div class="line" style="animation-delay:.1s">
+          <span class="prompt">$</span> whoami
+          <span class="out"><b>Bindhya J M</b> — Kochi, India / Sweden</span>
+        </div>
+        <div class="line" style="animation-delay:.5s">
+          <span class="prompt">$</span> uptime
+          <span class="out">7+ years delivering production software at <b>ClaySys Technologies</b></span>
+        </div>
+        <div class="line" style="animation-delay:.9s">
+          <span class="prompt">$</span> cat status.log
+          <span class="out">Completing <b>MSc Cybersecurity</b> at Jönköping University · hands-on with SOC, SIEM &amp; incident response · open to security analyst roles<span class="cursor"></span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-row">
+      <a class="btn primary" href="mailto:bindhya444@gmail.com">Email me</a>
+      <a class="btn ghost" href="#experience">See the experience log</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="sec-head reveal-up">
+      <div class="sec-tag">01 · about</div>
+      <h2 class="sec-title">From building systems to defending them</h2>
+    </div>
+    <div class="about reveal-up">
+      <p>I spent over seven years as a <strong>Senior Software Analyst</strong> at ClaySys Technologies, taking enterprise SharePoint, SQL, and .NET systems from requirements through production — leading teams, running client-facing engagements for banks, credit unions, and beverage manufacturers, and keeping deployments stable.</p>
+      <p>I'm now completing an <strong>MSc in Cybersecurity</strong> at Jönköping University, Sweden, moving that same production discipline into security operations: log analysis, alert triage, and incident response, practiced hands-on through SOC labs and SIEM tooling.</p>
+      <div class="stat-row">
+        <div class="stat"><b>7+</b><span>YEARS IN DELIVERY</span></div>
+        <div class="stat"><b>12</b><span>ENGINEERS LED</span></div>
+        <div class="stat"><b>3</b><span>ENTERPRISE CLIENTS</span></div>
+        <div class="stat"><b>2025–26</b><span>MSC CYBERSECURITY</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="sec-head reveal-up">
+      <div class="sec-tag">02 · skills</div>
+      <h2 class="sec-title">Build / Defend</h2>
+      <p class="sec-sub">Seven years shipping the systems on the left. The last year learning to protect systems like it, on the right.</p>
+    </div>
+    <div class="duality reveal-up">
+      <div class="panel build">
+        <div class="panel-head">
+          <div class="panel-title">BUILD</div>
+          <div class="panel-note">production, 2018–2025</div>
+        </div>
+        <ul class="skill-list">
+          <li><b>Languages —</b> C#, ASP.NET, JavaScript, C, C++</li>
+          <li><b>Web —</b> HTML, CSS</li>
+          <li><b>Data —</b> SQL Server, stored procedures, backend design</li>
+          <li><b>Platform —</b> SharePoint, Appforms</li>
+          <li><b>Tools —</b> Visual Studio, Azure DevOps</li>
+          <li><b>Practice —</b> Agile, SDLC, team leadership &amp; training</li>
+        </ul>
+      </div>
+      <div class="panel defend">
+        <div class="panel-head">
+          <div class="panel-title">DEFEND</div>
+          <div class="panel-note">labs, 2025–2026</div>
+        </div>
+        <ul class="skill-list">
+          <li><b>SOC —</b> alert monitoring, log analysis, triage</li>
+          <li><b>IR —</b> detection → containment → eradication → recovery</li>
+          <li><b>SIEM —</b> Splunk, IBM QRadar</li>
+          <li><b>Networking —</b> TCP/IP, DNS, HTTP/HTTPS, OSI model, packet analysis</li>
+          <li><b>Method —</b> simulated attack scenarios, TryHackMe labs</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="sec-head reveal-up">
+      <div class="sec-tag">03 · experience log</div>
+      <h2 class="sec-title">Where the systems were</h2>
+    </div>
+    <div class="log reveal-up">
+      <div class="entry">
+        <div class="entry-ts">2018.04 → 2025.10</div>
+        <div class="entry-role">Senior Software Analyst · Team Lead &amp; Trainer</div>
+        <div class="entry-org">ClaySys Technologies — Ernakulam</div>
+        <ul>
+          <li><b>Led</b> projects end-to-end across SharePoint, SQL, and Appforms, mentoring junior team members.</li>
+          <li><b>Collaborated</b> with cross-functional teams to integrate new features into live systems.</li>
+          <li><b>Estimated</b> delivery timelines and resourcing to lift project success rates.</li>
+          <li><b>Managed</b> client relationships, resolving support requests to retain repeat business.</li>
+        </ul>
+
+        <div class="subgroup">
+          <div class="entry sub">
+            <div class="entry-ts">2022.07 → 2025.09</div>
+            <div class="entry-role">Veridian Credit Union</div>
+            <ul>
+              <li>Team lead for a 12-person delivery team; owned client interactions, requirements, and production deployments.</li>
+              <li>Ran code review, unit testing, and regression testing ahead of every release.</li>
+            </ul>
+          </div>
+          <div class="entry sub">
+            <div class="entry-ts">2019.02 → 2021.12</div>
+            <div class="entry-role">National Beverage Corp</div>
+            <ul>
+              <li>Designed and built an inventory tracking system and a sales reporting system.</li>
+            </ul>
+          </div>
+          <div class="entry sub">
+            <div class="entry-ts">2018.01 → 2019.12</div>
+            <div class="entry-role">Sandy Spring Bank</div>
+            <ul>
+              <li>Lead developer on a new online banking platform, owning technical design and stakeholder requirements.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="sec-head reveal-up">
+      <div class="sec-tag">04 · education</div>
+      <h2 class="sec-title">Field of study</h2>
+    </div>
+    <div class="edu-list reveal-up">
+      <div class="edu-item">
+        <div>
+          <div class="deg">MSc Cybersecurity <span class="badge">in progress</span></div>
+          <div class="org">Jönköping University — Sweden</div>
+        </div>
+        <div class="yr">2025 – 2026</div>
+      </div>
+      <div class="edu-item">
+        <div>
+          <div class="deg">Master of Computer Application</div>
+          <div class="org">Cochin University of Science and Technology</div>
+        </div>
+        <div class="yr">2015 – 2017</div>
+      </div>
+      <div class="edu-item">
+        <div>
+          <div class="deg">Bachelor of Computer Application</div>
+          <div class="org">Mahatma Gandhi University</div>
+        </div>
+        <div class="yr">2012 – 2015</div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="sec-head reveal-up">
+      <div class="sec-tag">05 · contact</div>
+      <h2 class="sec-title">Open a connection</h2>
+    </div>
+    <div class="contact-grid reveal-up">
+      <div class="contact-links">
+        <a href="mailto:bindhya444@gmail.com"><span class="k">mail</span> bindhya444@gmail.com</a>
+        <a href="tel:+919745752793"><span class="k">india</span> +91 97457 52793</a>
+        <a href="tel:+46769578921"><span class="k">sweden</span> +46 769 578 921</a>
+      </div>
+    </div>
+    <div class="foot-note">© 2026 Bindhya J M — built for the software → security pivot.</div>
+  </footer>
+
+</main>
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const navLinks = document.getElementById('navLinks');
+  menuBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal-up').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
